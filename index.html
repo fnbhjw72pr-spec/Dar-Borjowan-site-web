@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dar Borjowan | Styliste des Mariées Marocaines</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Polices de luxe : Playfair Display pour les titres et Montserrat pour le corps -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --gold: #D4AF37;
+        }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            scroll-behavior: smooth; 
+        }
+        .font-serif { 
+            font-family: 'Playfair Display', serif; 
+        }
+        
+        /* Navigation avec effet flou au scroll */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .section-padding { 
+            padding: 100px 0; 
+        }
+        
+        /* Animations d'apparition au défilement */
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(30px); 
+            transition: all 0.8s ease-out; 
+        }
+        .reveal.active { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+        /* Animation de flottement pour les boutons interactifs */
+        .btn-float {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-float:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Style de la bannière image ajustée pour ne pas couper l'image */
+        .banner-container {
+            width: 100%;
+            background-color: #fff; /* Fond blanc pour les bords si l'image est étroite */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .full-image-display {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900 overflow-x-hidden">
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-10 flex justify-center items-center text-white">
+        <ul class="flex space-x-10 text-[10px] uppercase tracking-[0.3em] font-light">
+            <li><a href="#accueil" class="hover:text-amber-400 transition">Accueil</a></li>
+            <li><a href="#propos" class="hover:text-amber-400 transition">À Propos</a></li>
+            <li><a href="#services" class="hover:text-amber-400 transition">Services</a></li>
+            <li><a href="#contact" class="hover:text-amber-400 transition">Contact</a></li>
+        </ul>
+
+        <div class="absolute right-10 flex items-center space-x-4">
+            <a href="https://www.instagram.com/negafa_dar_borjowan?igsh=OGxmamFnbXp1amx3&utm_source=qr" target="_blank" class="hover:text-amber-400 transition">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1 : ACCUEIL (HERO) -->
+    <section id="accueil" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Vidéo de fond en boucle -->
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="https://res.cloudinary.com/da7tgj7kw/video/upload/v1770978763/background.mp4_hg3a8z.mp4" type="video/mp4">
+            </video>
+            <!-- Overlay pour assombrir et améliorer la lisibilité du texte -->
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+
+        <div class="relative z-10 text-center text-white px-6">
+            <p class="text-amber-400 text-xs uppercase tracking-[0.5em] mb-4 reveal">Maison de Haute Couture</p>
+            <h1 class="text-5xl md:text-8xl font-serif font-light mb-6 reveal italic">Dar Borjowan</h1>
+            <p class="text-lg md:text-xl font-light tracking-[0.2em] mb-12 opacity-90 reveal">Styliste des mariées marocaines</p>
+            <div class="flex justify-center reveal">
+                <a href="https://www.instagram.com/negafa_dar_borjowan?igsh=OGxmamFnbXp1amx3&utm_source=qr" target="_blank" class="btn-float px-12 py-5 bg-amber-600 text-white hover:bg-amber-700 tracking-[0.3em] text-xs uppercase rounded-full shadow-lg flex items-center gap-3">
+                    <i data-lucide="instagram" class="w-4 h-4"></i>
+                    Suivre sur Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 : À PROPOS (NOTRE HISTOIRE) -->
+    <section id="propos" class="section-padding bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center reveal space-y-12">
+                <div class="space-y-4">
+                    <h2 class="text-xs uppercase tracking-[0.4em] text-amber-600 font-semibold italic">Notre histoire</h2>
+                    <!-- Phrase supprimée ici -->
+                </div>
+                
+                <div class="space-y-8">
+                    <p class="text-stone-700 font-light leading-relaxed text-xl md:text-2xl font-serif italic">
+                        Dar Borjowan est née de la passion de <strong>Sanae El khlifi</strong> pour l’artisanat marocain et le désir de sublimer chaque mariée dans sa quête de la robe parfaite.
+                    </p>
+                    <div class="w-24 h-px bg-amber-400 mx-auto opacity-40"></div>
+                    <p class="text-stone-600 font-light leading-relaxed text-lg max-w-2xl mx-auto">
+                        Notre maison allie l’élégance intemporelle des traditions marocaines aux tendances contemporaines. Chaque création est le fruit d’un savoir-faire transmis de génération en génération, enrichi par notre vision moderne du stylisme. Nous croyons que chaque mariée mérite une robe aussi unique que son histoire d’amour.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNIÈRE IMAGE TRANSITIONNELLE - AJUSTÉE POUR NE PAS COUPER -->
+    <div class="banner-container reveal">
+        <img src="https://lh3.googleusercontent.com/d/1VYeS4I-mwgFVxnrlYW3Ws29CbI11G_H4" alt="Collection Dar Borjowan" class="full-image-display">
+    </div>
+
+    <!-- SECTION 3 : SERVICES -->
+    <section id="services" class="section-padding bg-stone-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-serif mb-4 italic text-stone-800">À votre service</h2>
+                <p class="text-stone-500 font-light max-w-xl mx-auto mb-6">Nous mettons notre savoir-faire et notre passion au service de votre bonheur.</p>
+                <div class="w-16 h-px bg-amber-400 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Design -->
+                <div class="bg-white p-12 text-center hover:shadow-2xl transition-all group reveal border-b-4 border-transparent hover:border-amber-400 rounded-lg">
+                    <div class="mb-8 inline-block p-4 rounded-full bg-stone-50 group-hover:bg-amber-50 transition">
+                        <i data-lucide="scissors" class="text-amber-600 w-8 h-8"></i>
+                    </div>
+                    <h4 class="font-serif text-xl mb-4 tracking-wider text-stone-800">Design traditionnel et moderne</h4>
+                    <p class="text-stone-500 text-sm font-light leading-relaxed">Des créations uniques qui fusionnent l’élégance des traditions marocaines avec les tendances contemporaines du stylisme.</p>
+                </div>
+                <!-- Accessoires -->
+                <div class="bg-white p-12 text-center hover:shadow-2xl transition-all group reveal border-b-4 border-transparent hover:border-amber-400 rounded-lg">
+                    <div class="mb-8 inline-block p-4 rounded-full bg-stone-50 group-hover:bg-amber-50 transition">
+                        <i data-lucide="gem" class="text-amber-600 w-8 h-8"></i>
+                    </div>
+                    <h4 class="font-serif text-xl mb-4 tracking-wider text-stone-800">Accessoires & Ornements</h4>
+                    <p class="text-stone-500 text-sm font-light leading-relaxed">Une sélection raffinée d’accessoires traditionnels : caftans, takchitas, bijoux et ornements pour parfaire votre tenue.</p>
+                </div>
+                <!-- Accompagnement -->
+                <div class="bg-white p-12 text-center hover:shadow-2xl transition-all group reveal border-b-4 border-transparent hover:border-amber-400 rounded-lg">
+                    <div class="mb-8 inline-block p-4 rounded-full bg-stone-50 group-hover:bg-amber-50 transition">
+                        <i data-lucide="sparkles" class="text-amber-600 w-8 h-8"></i>
+                    </div>
+                    <h4 class="font-serif text-xl mb-4 tracking-wider text-stone-800">Conseil & Accompagnement</h4>
+                    <p class="text-stone-500 text-sm font-light leading-relaxed">Un accompagnement personnalisé à chaque étape, de la conception à l’essayage final, pour réaliser la robe de vos rêves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 : CONTACT -->
+    <section id="contact" class="section-padding bg-stone-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-serif mb-4 italic">Contactez-nous</h2>
+                    <div class="w-16 h-px bg-amber-400 mx-auto opacity-50"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-12 text-center reveal">
+                    <div class="space-y-4">
+                        <div class="inline-block p-4 rounded-full bg-white/5 text-amber-400 mb-2">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <h4 class="uppercase tracking-widest text-xs font-bold text-stone-400">Téléphone</h4>
+                        <p class="text-lg tracking-widest">0652427120</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="inline-block p-4 rounded-full bg-white/5 text-amber-400 mb-2">
+                            <i data-lucide="instagram"></i>
+                        </div>
+                        <h4 class="uppercase tracking-widest text-xs font-bold text-stone-400">Instagram</h4>
+                        <a href="https://www.instagram.com/negafa_dar_borjowan?igsh=OGxmamFnbXp1amx3&utm_source=qr" target="_blank" class="text-lg tracking-widest hover:text-amber-400 transition">nagafa_dar_borjowan</a>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="inline-block p-4 rounded-full bg-white/5 text-amber-400 mb-2">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h4 class="uppercase tracking-widest text-xs font-bold text-stone-400">Adresse</h4>
+                        <p class="text-lg tracking-widest italic">Fès, Maroc</p>
+                    </div>
+                </div>
+
+                <div class="mt-20 text-center reveal">
+                    <a href="https://wa.me/212652427120" target="_blank" class="btn-float inline-flex items-center space-x-3 px-10 py-4 bg-green-600 text-white rounded-full hover:bg-green-700 transition shadow-xl">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        <span class="uppercase tracking-[0.2em] text-xs font-bold">Discuter sur WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIED DE PAGE -->
+    <footer class="py-10 text-center text-stone-500 text-[10px] uppercase tracking-[0.2em] bg-stone-50 border-t border-stone-200">
+        &copy; 2024 DAR BORJOWAN - Tous droits réservés.
+    </footer>
+
+    <!-- SCRIPTS INTERACTIFS -->
+    <script>
+        // Initialisation des icônes
+        lucide.createIcons();
+
+        // Gestion du menu de navigation lors du défilement
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('glass-nav', 'py-4', 'shadow-sm', 'text-stone-900');
+                nav.classList.remove('py-6', 'text-white');
+            } else {
+                nav.classList.remove('glass-nav', 'py-4', 'shadow-sm', 'text-stone-900');
+                nav.classList.add('py-6', 'text-white');
+            }
+        });
+
+        // Animation d'apparition au défilement (Scroll Reveal)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Exécution initiale pour les éléments en haut de page
+        reveal();
+    </script>
+</body>
+</html>
